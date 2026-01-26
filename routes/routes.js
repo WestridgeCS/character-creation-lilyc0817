@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
 // Create character
 router.post("/characters", async (req, res, next) => {
     try{
-        const {name, type, trait} = req.body;
+        const {name, type, trait, weapon} = req.body;
         await Character.create({name, type, trait, weapon});
         res.redirect("/");
     }

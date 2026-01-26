@@ -26,8 +26,14 @@ const characterSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: ['Brave', 'Cunning', 'Wise', 'Charming', 'Loyal']
-    }
+    },
+    weapon: {
+      type: String,
+      required: true,
+      enum: ['Sword', 'Staff', 'Voice', 'Dagger', 'Axe']
+    },
   },
+    
   /*
     STEP 5: timestamps automatically adds:
     createdAt and updatedAt to every document

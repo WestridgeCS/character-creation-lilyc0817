@@ -32,20 +32,33 @@
         <option value="<%= trait %>"><%= trait %></option>
       <% }) %>
     </select>
+    <label for="weapon">Weapon</label>
+    <select id="weapon" name="weapon" required>
+      <option value="" disabled selected>Select a weapon</option>
+      <!-- INJECT DROP DOWN OPTIONS -->
+    <% weapons.forEach(weapon => { %>
+        <option value="<%= weapon %>"><%= weapon %></option>
+      <% }) %>
+    </select>
+
     <button type="submit">Create Character</button>
   </form>
 
+    
+    
   <h2>Characters</h2>
 
   <% if (characters.length === 0) { %>
     <p>No characters yet. Create one above.</p>
   <% } else { %>
+    <p>Characters: <%= characters.length %></p>
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Type</th>
           <th>Trait</th>
+          <th>Weapon</th>
         </tr>
       </thead>
       <tbody>
