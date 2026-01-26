@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <title>INJECT TITLE</title> -->
+   <title><%= character.name %></title>
   <link rel="stylesheet" href="/character.css">
 
 </head>
@@ -15,15 +16,25 @@
     <div class="row">
       <div class="label">Type</div>
       <!-- <div class="value">INJECT DATA</div> -->
+       <div class="value"><%= character.type %></div>
     </div>
 
     <div class="row">
       <div class="label">Trait</div>
       <!-- <div class="value">INJECT DATA</div> -->
+       <div class="value"><%= character.trait %></div>
     </div>
 
+    <div class="row">
+      <div class="label">Weapon</div>
+      <!-- <div class="value">INJECT DATA</div> -->
+       <div class="value"><%= character.weapon %></div>
+    </div>
+
+    <p><%=character.name%> is a <%=character.type%> who is known for being <%=character.trait%>.</p>
     <a class="button" href="/">← Back</a>
   </div>
+
 
 </body>
 </html>

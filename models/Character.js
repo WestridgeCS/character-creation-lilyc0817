@@ -7,13 +7,26 @@ import mongoose from 'mongoose';
 const characterSchema = new mongoose.Schema(
   {
     // STEP 2: name is required text
-    
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: 40,
+    },
 
     // STEP 3: type must be one of these options (dropdown-friendly)
-    
+    type: {
+      type: String,
+      required: true,
+      enum: ['Warrior', 'Druid', 'Bard', 'Elf', 'Wizard']
+    },
 
     // STEP 4: trait must be one of these options (dropdown-friendly)
-    
+    trait: {
+      type: String,
+      required: true,
+      enum: ['Brave', 'Cunning', 'Wise', 'Charming', 'Loyal']
+    }
   },
   /*
     STEP 5: timestamps automatically adds:
