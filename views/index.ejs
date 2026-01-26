@@ -18,28 +18,47 @@
     <select id="type" name="type" required>
       <option value="" disabled selected>Select a type</option>
       <!-- INJECT DROP DOWN OPTIONS -->
+       <% types.forEach(type => { %>
+        <option value="<%= type %>"><%= type %></option>
+      <% }) %>
     </select>
 
     <label for="trait">Trait</label>
     <select id="trait" name="trait" required>
       <option value="" disabled selected>Select a trait</option>
       <!-- INJECT DROP DOWN OPTIONS -->
+    
+    <% traits.forEach(trait => { %>
+        <option value="<%= trait %>"><%= trait %></option>
+      <% }) %>
+    </select>
+    <label for="weapon">Weapon</label>
+    <select id="weapon" name="weapon" required>
+      <option value="" disabled selected>Select a weapon</option>
+      <!-- INJECT DROP DOWN OPTIONS -->
+    <% weapons.forEach(weapon => { %>
+        <option value="<%= weapon %>"><%= weapon %></option>
+      <% }) %>
     </select>
 
     <button type="submit">Create Character</button>
   </form>
 
+    
+    
   <h2>Characters</h2>
 
   <% if (characters.length === 0) { %>
     <p>No characters yet. Create one above.</p>
   <% } else { %>
+    <p>Characters: <%= characters.length %></p>
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Type</th>
           <th>Trait</th>
+          <th>Weapon</th>
         </tr>
       </thead>
       <tbody>
@@ -50,6 +69,7 @@
             </td>
             <td><%= c.type %></td>
             <td><%= c.trait %></td>
+            <td><%= c.weapon%></td>
           </tr>
         <% }) %>
       </tbody>
